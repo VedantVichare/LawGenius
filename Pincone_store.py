@@ -16,6 +16,7 @@ def extract_text_from_pdf(pdf_path):
         text += page.get_text("text") + "\n"  
     return text
 
+
 pdf_text = extract_text_from_pdf("D:\\ilovepdf_merged.pdf")
 doc = fitz.open("D:\\ilovepdf_merged.pdf") 
 
