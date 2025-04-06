@@ -1,0 +1,7 @@
+streamlit
+transformers
+sentence-transformers
+pinecone-client
+pdfplumber
+SpeechRecognition
+google-generativeai
