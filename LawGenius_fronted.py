@@ -1,5 +1,4 @@
 import os
-from dotenv import load_dotenv
 import streamlit as st
 from transformers import AutoModelForQuestionAnswering, AutoTokenizer, pipeline
 from sentence_transformers import SentenceTransformer
@@ -8,16 +7,12 @@ import pdfplumber
 import speech_recognition as sr
 import google.generativeai as genai
 
-load_dotenv()
 
 st.set_page_config(page_title="📜 Legal AI Chatbot", layout="wide")
 st.title("📜 Legal AI Chatbot")
 
 
 
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
-PINECONE_INDEX_NAME = os.getenv("PINECONE_INDEX_NAME")
 
 genai.configure(api_key=GEMINI_API_KEY)
 gemini_model = genai.GenerativeModel("gemini-1.5-pro")
