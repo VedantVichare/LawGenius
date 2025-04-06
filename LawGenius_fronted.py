@@ -29,15 +29,7 @@ gemini_model = genai.GenerativeModel("gemini-1.5-pro")
 pc = Pinecone(api_key=PINECONE_API_KEY)
 index = pc.Index(PINECONE_INDEX_NAME)
 
-cache_dir = "./model_cache"
-os.makedirs(cache_dir, exist_ok=True)
-
-
-try:
-    embed_model = SentenceTransformer("all-MiniLM-L6-v2", cache_folder=cache_dir)
-except OSError as e:
-    st.error(f"❌ Model download failed: {e}")
-    st.stop()
+embed_model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
 
 
 legal_model_name = "nlpaueb/legal-bert-base-uncased"
