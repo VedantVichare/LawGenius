@@ -29,8 +29,13 @@ gemini_model = genai.GenerativeModel("gemini-1.5-pro")
 pc = Pinecone(api_key=PINECONE_API_KEY)
 index = pc.Index(PINECONE_INDEX_NAME)
 
-embed_model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
+MODEL_PATH = "./model_dir"
 
+if not os.path.exists(MODEL_PATH):
+    st.error("❌ Model directory not found. Please upload it manually.")
+    st.stop()
+
+embed_model = SentenceTransformer(MODEL_PATH)
 
 legal_model_name = "nlpaueb/legal-bert-base-uncased"
 tokenizer = AutoTokenizer.from_pretrained(legal_model_name)
