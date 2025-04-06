@@ -6,6 +6,14 @@ from pinecone import Pinecone
 import pdfplumber
 import speech_recognition as sr
 import google.generativeai as genai
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# Retrieve API keys from .env
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
+PINECONE_INDEX_NAME = os.getenv("PINECONE_INDEX_NAME")
 
 
 st.set_page_config(page_title="📜 Legal AI Chatbot", layout="wide")
