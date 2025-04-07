@@ -33,7 +33,7 @@ MODEL_PATH = "./model_dir"  # Relative to your app
 
 embed_model = SentenceTransformer(MODEL_PATH)
 
-LEGAL_BERT_PATH = "./legalbert_model"
+LEGAL_BERT_PATH = "./legalbert_model1"
 # legal_model_name = "nlpaueb/legal-bert-base-uncased"
 # tokenizer = AutoTokenizer.from_pretrained(legal_model_name)
 # model = AutoModelForQuestionAnswering.from_pretrained(legal_model_name)
