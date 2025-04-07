@@ -33,10 +33,12 @@ MODEL_PATH = "./model_dir"  # Relative to your app
 
 embed_model = SentenceTransformer(MODEL_PATH)
 
-
-legal_model_name = "nlpaueb/legal-bert-base-uncased"
-tokenizer = AutoTokenizer.from_pretrained(legal_model_name)
-model = AutoModelForQuestionAnswering.from_pretrained(legal_model_name)
+LEGAL_BERT_PATH = "./legalbert_model"
+# legal_model_name = "nlpaueb/legal-bert-base-uncased"
+# tokenizer = AutoTokenizer.from_pretrained(legal_model_name)
+# model = AutoModelForQuestionAnswering.from_pretrained(legal_model_name)
+tokenizer = AutoTokenizer.from_pretrained(LEGAL_BERT_PATH)
+model = AutoModelForQuestionAnswering.from_pretrained(LEGAL_BERT_PATH)
 qa_pipeline = pipeline("question-answering", model=model, tokenizer=tokenizer)
 
 
