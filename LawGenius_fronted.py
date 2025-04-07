@@ -29,17 +29,9 @@ gemini_model = genai.GenerativeModel("gemini-1.5-pro")
 pc = Pinecone(api_key=PINECONE_API_KEY)
 index = pc.Index(PINECONE_INDEX_NAME)
 
-# MODEL_PATH = "./model_dir"
+MODEL_PATH = "./model_dir"  # Relative to your app
 
-# # Check if the model directory exists, if not, download it
-# if not os.path.exists(MODEL_PATH):
-#     print("Downloading model...")
-#     embed_model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
-#     embed_model.save(MODEL_PATH)
-# else:
-#     embed_model = SentenceTransformer(MODEL_PATH)
-
-embed_model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
+embed_model = SentenceTransformer(MODEL_PATH)
 
 
 legal_model_name = "nlpaueb/legal-bert-base-uncased"
