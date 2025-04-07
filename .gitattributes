@@ -1,0 +1,1 @@
+legalbert_model1/model.safetensors filter=lfs diff=lfs merge=lfs -text
